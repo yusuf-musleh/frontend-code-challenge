@@ -20,7 +20,7 @@ I would like you to build four pages:
 I've provided a placeholder for these four pages in the 'static' directory.
 **In addition** you need to add a cart to the top of EACH page that shows how many items have been added to cart. Once the cart is clicked it should take you to the checkout page where you can see all the chosen items.
 
-You have to use AngularJS for this task. I know that you're only familiar with AngularJS so now is time to show us how much you can learn in a short amount of time.
+You have to use AngularJS for this task. I know that you're not proficient with AngularJS so now is time to show us how much you can learn in a short amount of time.
 
 In terms of design & layout, that's entirely up to you :). I suggest you use [Skeleton](http://getskeleton.com/) since it's very simple and looks elegant. I would recommend you use whatever you're most comfortable with.
 
@@ -67,22 +67,22 @@ You must have noticed that from the top endpoints there is no mention of a cart.
 
 ## Requirements
 
-At a minimum, there are three things we would like to see:
+At a minimum, there are three things I need like to see:
 * You should be able to add items through the front end application
 * A list of all the items on the items page
 * The checkout page should have all the items that you chose to checkout
 * The number of items in cart is persistant amongst different browser tabs
 * Decent design/layout of content
 
-We will of course examine your code for readability, architectural decisions, and modularity.  If/when you meet with me, be prepared to talk about why and how you built your interfaces.
+I will of course examine your code for readability, architectural decisions, and modularity. If/when you meet with us, be prepared to talk about why and how you built your interfaces.
 
 Design isn't a point I'm concerned about here, so I suggest you just make it usable or just organized and not spend too much time on it.
 
-You should be able to finish this in 4-8 hours, I will give you 5 days to do this however. I cannot fairly judge how much time you spent on this project but **please don't spend more than 12 hours on this project**. 
+You should be able to finish this in 4-8 hours, I will give you 5 days to do this. I cannot fairly judge how much time you spent on this project but **please don't spend more than 12 hours on this project**.
 
 ## Idea inspiration
 
-If you have additional time after completing the requirements (we _think_ you should), then we'd love to see what else you can do.  Here are some ideas to get you started (but please don't limit yourself to these!).
+If you have additional time after completing the requirements (I _think_ you should), then I'd love to see what else you can do. Here are some ideas to get you started (but please don't limit yourself to these!).
 
 * Add Items form validation
 * Automated testing, for example try [this](https://www.protractortest.org/)
@@ -90,7 +90,7 @@ If you have additional time after completing the requirements (we _think_ you sh
 * Optimize assets (minimize and/or bundle css/js)
 * Dynamically load items when they're added to backend (no need to refresh)
 
-To be perfectly clear, I don't expect that anyone could complete _all_ of these.  This is simply a list of ideas to inspire you.
+To be perfectly clear, I don't expect that anyone could complete _all_ of these. This is simply a list of ideas to inspire you.
 
 ## Submission
 
@@ -102,4 +102,4 @@ Email me [yasser@meddy.com](mailto:yasser@meddy.com)
 
 ## License
 
-We have licensed this project under the MIT license so that you may use this for a portfolio piece (or anything else!).
+I have licensed this project under the MIT license so that you may use this for a portfolio piece (or anything else!).
