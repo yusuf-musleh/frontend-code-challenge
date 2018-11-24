@@ -16,7 +16,7 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
     var item = req.body;
     curId += 1;
-    item.id = curId++;
+    item.id = curId;
     items[item.id] = item;
     log.info('Created item', item);
     res.json(item);
