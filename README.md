@@ -67,7 +67,7 @@ You must have noticed that from the top endpoints there is no mention of a cart.
 
 ## Requirements
 
-At a minimum, there are 5 things I need like to see:
+At a minimum, there are 5 things I need to see:
 * You should be able to add items through the front end application
 * A list of all the items on the items page
 * The checkout page should have all the items that you chose to checkout
