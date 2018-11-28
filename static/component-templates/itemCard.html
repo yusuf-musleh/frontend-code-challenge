@@ -1,0 +1,13 @@
+<!-- Item Card Component Template -->
+
+<div class="card mb-4 bg-secondary">
+  <!-- using conditional styling to prevent fetching image with invalid url -->
+  <div class="card-img-top item-image" ng-style="$ctrl.item && {'background-image':'url('+ $ctrl.item.img +')'}"></div>
+  <div class="card-body">
+    <h5 class="card-title">{{ $ctrl.item.name }}</h5>
+    <p class="card-text">Price: {{ $ctrl.item.price }}</p>
+    <p ng-show="$ctrl.inCart" class="card-text" >Quantity: {{ $ctrl.item.quantity }}</p>
+    <button ng-hide="!$ctrl.inCart" class="btn btn-dark" ng-click="$ctrl.removeItemFromCart($ctrl.item)">Remove from Cart</button>
+    <button ng-hide="$ctrl.inCart" class="btn btn-dark" ng-click="$ctrl.addItemToCart($ctrl.item)">Add to Cart</button>
+  </div>
+</div>

@@ -1,19 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="randoStoreAddItems" ng-cloak>
 <head>
   <meta charset=utf-8>
   <title>RandoStore Add Items</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
 </head>
 <body>
-  <h1>Put Items up for Sale</h1>
-  <form>
-    <label for="name">Name:</label> <input type="text" name="name"><br>
-    <label for="price">Price:</label> <input type="text" name="price"><br>
-    <label for="image">Image Url:</label> <input type="text" name="image"><br>
-    <button type="submit">Submit</button>
-  </form>
-  <p>
-    <a href="/items.html">View items</a>
-  </p>
+  <div ng-controller="addItemCtrl" class="container d-flex w-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+      <div class="inner">
+        <h3 class="masthead-brand">RandoStore</h3>
+        <navbar current-page="'add-item'" cart-items-count="cartItemsCount"></navbar>
+      </div>
+    </header>
+    <main role="main" class="inner conver">
+      <h2>Put Items up for Sale</h2>
+      <hr/>
+      <div>
+        <form name="addItemForm" ng-submit="addItem(itemInfo)" ng-show="addItemFormState !== 2">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input class="form-control" type="text" name="name" ng-model="itemInfo.name" ng-required="true">
+            <span class="text-danger" ng-show="addItemForm.name.$dirty && addItemForm.name.$invalid">
+              Must not be empty
+            </span>
+          </div>
+          <div class="form-group">
+            <label for="price">Price:</label>
+            <input class="form-control" type="text" name="price" ng-model="itemInfo.price" ng-required="true" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/">
+            <span class="text-danger" ng-show="addItemForm.price.$dirty && addItemForm.price.$invalid">
+              Must be a number in the format x, x.x or x.xx
+            </span>
+          </div>
+          <div class="form-group">
+            <label for="img">Image Url:</label>
+            <input class="form-control" type="text" name="img" ng-model="itemInfo.img" ng-required="true" ng-pattern="/^(http[s]?:\/\/){0,1}(www\.){0,1}[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,5}[\.]{0,1}/">
+            <span class="text-danger" ng-show="addItemForm.img.$dirty && addItemForm.img.$invalid">
+              Must be a valid url (eg: https://www.google.com/)
+            </span>
+          </div>
+          <button class="btn btn-dark" type="submit" ng-disabled="addItemForm.$invalid">Submit</button>
+          <span class="text-danger" ng-show="addItemFormState === 3">
+              Failed to add item. {{ errorMessageFromServer }}
+          </span>
+        </form>
+        <div ng-show="addItemFormState === 2">
+          <div class="alert alert-dark" role="alert">
+            You item has been added successfully!
+          </div>
+          <button class="btn btn-dark" ng-click="resetAddItemForm()">Add another item</button>
+        </div>
+      </div>
+      </main>
+      <footer class="mastfoot mt-auto">
+      </footer>
+    </div>
+
+  <!-- decided to go for cdns to save time on setting up, and focus more on the tasks in hand -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.min.js" integrity="sha256-QRJz3b0/ZZC4ilKmBRRjY0MgnVhQ+RR1tpWLYaRRjSo=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="js/randoStoreAddItems.js"></script>
+  <script type="text/javascript" src="js/cartService.js"></script>
+  <script type="text/javascript" src="js/components/navbar.component.js"></script>
 </body>
 </html>

@@ -1,0 +1,8 @@
+<!-- Navbar Component Template -->
+
+<nav class="nav nav-masthead justify-content-center">
+  <a class="nav-link" href="/">Home</a>
+  <a class="nav-link" ng-class="{'active': $ctrl.currentPage == 'add-item'}" href="/add-items.html">Add Item</a>
+  <a class="nav-link" ng-class="{'active': $ctrl.currentPage == 'browse-items'}" href="/items.html">Browse Items</a>
+  <a class="nav-link" ng-class="{'active': $ctrl.currentPage == 'checkout'}" href="/checkout.html">Checkout <span class="badge badge-dark">{{ $ctrl.cartItemsCount }}</span></a>
+</nav>
